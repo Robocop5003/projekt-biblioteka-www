@@ -1,0 +1,28 @@
+body {
+    background-color: #000000;
+}
+
+h1 {
+    font-family: Comic Sans MS;
+    color: white;
+    text-shadow: 2px 2px 4px #BBBBBB;
+    display: inline;
+    animation: move 10s linear infinite;
+    white-space: nowrap;
+}
+
+
+@keyframes move {
+  0% {
+    margin-left: 0%;
+  }
+
+  50% {
+    margin-left: 77%;
+  }
+
+  100% {
+    margin-left: 0%;
+  }
+  
+}
