@@ -1,3 +1,6 @@
+/*=============================================*/
+                        /*Elementy*/
+
 body {
     background-color: #000000;
 }
@@ -10,13 +13,21 @@ h1 {
     white-space: nowrap;
 }
 
-#move h1 {
-    animation: move 10s linear infinite;
-}
-
 main {
     display: flex;
     flex-direction: column;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+/*=============================================*/
+
+                    /*Id*/
+
+#move h1 {
+    animation: move 10s linear infinite;
 }
 
 #polecane_ksiazki {
@@ -51,9 +62,9 @@ main {
     color: beige;
 }
 
-textarea:focus, input:focus{
-    outline: none;
-}
+/*=============================================*/
+
+                        /*Klasy*/
 
 .ksiazka {
     background-color: rgba(200,200,200,0.5);
@@ -67,6 +78,15 @@ textarea:focus, input:focus{
     flex-basis: 100%;
     height: 0;
 }
+
+.sticky{
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+}
+/*=============================================*/
+
+                        /*Animacje*/
 
 @keyframes move {
   0% {
@@ -82,3 +102,5 @@ textarea:focus, input:focus{
   }
   
 }
+
+/*=============================================*/
