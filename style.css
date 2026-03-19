@@ -56,6 +56,7 @@ textarea:focus, input:focus{
 
 #wyszukiwarka input {
     width: 10%;
+    min-width: 200px;
     height: 25px;
     background-color: #16161d;
     border-color: purple;
@@ -71,6 +72,7 @@ textarea:focus, input:focus{
     height: 150px;
     flex: 0 0 10%;
     width: 10%;
+    min-width: 200px;
 }
 
 .ksiazka:nth-child(4n) {
@@ -87,20 +89,5 @@ textarea:focus, input:focus{
 /*=============================================*/
 
                         /*Animacje*/
-
-@keyframes move {
-  0% {
-    margin-left: 0%;
-  }
-
-  50% {
-    margin-left: 77%;
-  }
-
-  100% {
-    margin-left: 0%;
-  }
-  
-}
 
 /*=============================================*/
