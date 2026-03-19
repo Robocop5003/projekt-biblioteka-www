@@ -1,3 +1,6 @@
+/*============================================*/
+                        /*Elementy*/
+
 body {
     background-color: #000000;
 }
@@ -10,13 +13,21 @@ h1 {
     white-space: nowrap;
 }
 
-#move h1 {
-    animation: move 10s linear infinite;
-}
-
 main {
     display: flex;
     flex-direction: column;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+/*=============================================*/
+
+                    /*Id*/
+
+#move h1 {
+    animation: move 10s linear infinite;
 }
 
 #polecane_ksiazki {
@@ -45,21 +56,23 @@ main {
 
 #wyszukiwarka input {
     width: 10%;
+    min-width: 200px;
     height: 25px;
     background-color: #16161d;
     border-color: purple;
     color: beige;
 }
 
-textarea:focus, input:focus{
-    outline: none;
-}
+/*=============================================*/
+
+                        /*Klasy*/
 
 .ksiazka {
     background-color: rgba(200,200,200,0.5);
     height: 150px;
     flex: 0 0 10%;
     width: 10%;
+    min-width: 200px;
 }
 
 .ksiazka:nth-child(4n) {
@@ -68,17 +81,13 @@ textarea:focus, input:focus{
     height: 0;
 }
 
-@keyframes move {
-  0% {
-    margin-left: 0%;
-  }
-
-  50% {
-    margin-left: 77%;
-  }
-
-  100% {
-    margin-left: 0%;
-  }
-  
+.sticky{
+    position: sticky;
+    top: 0;
+    background-color: #000000;
 }
+/*=============================================*/
+
+                        /*Animacje*/
+
+/*=============================================*/
