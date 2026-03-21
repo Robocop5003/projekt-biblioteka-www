@@ -46,6 +46,7 @@ textarea:focus, input:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
 }
 
 #move h1 {
@@ -90,6 +91,40 @@ textarea:focus, input:focus {
 
 #mode-switch:hover {
     cursor:pointer;
+}
+
+#navigacja{
+    position: fixed;
+    left: -200px;
+    top: 70px;
+    width: 200px;
+    height: 100%;
+    background-color: var(--color-background);
+    box-shadow: none;
+    transition: left 0.3s ease-in-out;
+}
+
+#navigacja.active {
+    left: 0px;
+    box-shadow: 0 2px 5px light-dark(black, white);
+}
+
+#navigacja nav ul{
+    list-style:none;
+    color: var(--color);
+}
+
+#navigacja nav ul li{
+    padding: 10px;
+}
+
+#navigacja nav ul li a{
+    color: var(--color);
+    text-decoration:none;
+}
+
+#navigacja nav ul li a:hover{
+    text-decoration: underline;
 }
 
 /* ========== Klasy ========== */

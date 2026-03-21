@@ -1,5 +1,12 @@
+const menuButton = document.getElementById("menu-icon");
+const modeSwitchButton = document.getElementById("mode-switch");
+const navigacja = document.getElementById("navigacja");
+
+menuButton.addEventListener("click", menuClick);
+modeSwitchButton.addEventListener("click", modeSwitchClick);
+
 function menuClick(){
-    console.log("Menu kliknięte");
+    navigacja.classList.toggle("active");
 }
 
 function modeSwitchClick() {
