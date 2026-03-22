@@ -10,6 +10,8 @@
 
 <html lang="pl">
 
+<!-- ========== Head ========== -->
+
 <head>
     <meta charset="UTF-8">
 
@@ -21,25 +23,30 @@
     <script defer src="script.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode,light_mode,menu"/>
+
+    <!-- === Skrypt ustawiający odpowiedni motyw przy starcie strony === -->
     
     <script>
         const theme = localStorage.getItem("theme") || "dark";
-        if (theme == "dark") {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.add("light");
-        }
+        if (theme == "dark") {document.documentElement.classList.add("dark");} 
+        else {document.documentElement.classList.add("light");}
     </script>
 </head>
 
+<!-- ========== Body ========== -->
+
 <body>
-    <div id="head" class="sticky"> <!--todo < Zmieńmy może tego nazwę, żeby nie myliła się nam z <head> -->
+    <!-- === Sticky na górze === -->
+
+    <div id="head" class="sticky"> <!--todo < Zmieńmy może tego id, żeby nie myliła się nam z <head> -->
         <header>
             <span id="menu-icon" alt="Menu" class="material-symbols-outlined unselectable">menu</span>
             <h1 id="logo">Biblioteka</h1>
             <span id="mode-switch" alt="Zmiana motywu" class="material-symbols-outlined unselectable"></span>
         </header>
     </div>
+
+    <!-- === Menu otwierane po lewej === -->
 
     <div id="navigacja">
         <nav>
@@ -52,10 +59,16 @@
         </nav>
     </div>
 
+    <!-- === Główna część strony === -->
+
     <main>
+        <!-- Wyszukiwarka -->
+
         <section id="wyszukiwarka">
             <input type="text" placeholder="Wyszukaj ksiazke...">
         </section>
+
+        <!-- Polecane książki -->
 
         <section id="polecane">
             <h1>Polecane:</h1>
@@ -75,6 +88,8 @@
             </div>
         </section>
     </main>
+
+    <!-- === Skrypt script.js === -->
 
     <script src="script.js"></script>
 </body>

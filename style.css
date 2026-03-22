@@ -181,6 +181,8 @@ main {
 
 /* ========== Klasy ========== */
 
+/* === Książka === */
+
 .ksiazka {
     display: flex;
     flex-direction: column;
@@ -223,6 +225,8 @@ main {
 .ksiazka:hover img {
     transform: scale(1.1);
 }
+
+/* === Sticky === */
 
 .sticky {
     position: sticky;
