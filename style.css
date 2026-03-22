@@ -95,17 +95,18 @@ textarea:focus, input:focus {
 
 #navigacja{
     position: fixed;
-    left: -200px;
+    transform: translateX(-100%);
     top: 70px;
     width: 200px;
-    height: 100%;
+    height: calc(100vh - 70px);
     background-color: var(--color-background);
     box-shadow: none;
-    transition: left 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 #navigacja.active {
-    left: 0px;
+    transform: translateX(0);
     box-shadow: 0 2px 5px light-dark(black, white);
 }
 

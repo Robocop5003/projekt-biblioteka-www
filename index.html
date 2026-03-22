@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script>
+        const theme = localStorage.getItem("theme") || "dark";
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.add("light");
+        }
+    </script>
 </head>
 
 <body>
