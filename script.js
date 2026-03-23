@@ -6,7 +6,18 @@ if(menuButton)
     menuButton.addEventListener("click", menuClick);
 
 if(modeSwitchButton)
+{
     modeSwitchButton.addEventListener("click", modeSwitchClick);
+    initThemeIcon();
+}
+
+function initThemeIcon() {
+    const theme = localStorage.getItem("theme");
+    if(theme != null)
+        modeSwitchButton.innerHTML = theme == "dark" ? "dark_mode" : "light_mode";
+    else
+        modeSwitchButton.innerHTML = "dark_mode";
+}
 
 function menuClick(){
     navigacja.classList.toggle("active");
@@ -17,6 +28,7 @@ function modeSwitchClick() {
     document.documentElement.classList.toggle("dark");
     document.documentElement.classList.toggle("light");
     localStorage.setItem("theme", theme == "dark" ? "light" : "dark");
+    initThemeIcon();
 }
 
 function randomInt(max, min = 0) {
@@ -35,16 +47,21 @@ async function getBooks() {
     return json;
 }
 
+function ksiazkaHTMLString(img, title, author) {
+    return `
+        <img src="${img}"></img>
+        <h3 class="tytul">${title}</h3>
+        <p class="autor">${author}</p>
+    `;
+}
+
 async function initBooks() {
     const books = await getBooks();
     const len = books.length;
     const elements = document.getElementsByClassName("ksiazka");
     Array.from(elements).forEach(element => {
         const randomBook = books[randomInt(len)]
-        element.innerHTML = `
-            <img src="${randomBook.simple_thumb}"></img>
-            <p>${randomBook.author} - ${randomBook.title}</p>
-        `;
+        element.innerHTML = ksiazkaHTMLString(randomBook.simple_thumb, randomBook.title, randomBook.author);
     });
 }
 
