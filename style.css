@@ -3,8 +3,11 @@
 :root {
     color-scheme: light dark;
 
-    --color-background: light-dark(white,#1c1c1c);
-    --color: light-dark(#1c1c1c,white);
+    --primary: light-dark(#1A3A3A, #b59a5b); 
+    --background: light-dark(white,#111111);
+    --container: light-dark(#f7f7f7, #0c0c0c);
+    --color: light-dark(#1c1c19,white);
+    --outline: #3a322d;
 }
 
 /* ========== Jasny i ciemny motyw ========== */
@@ -18,17 +21,21 @@
 
 /* ========== Elementy ========== */
 
+* {
+    box-sizing: border-box;    
+}
+
 body {
     color: var(--color);
-    background-color: var(--color-background);
+    background-color: var(--background);
     margin: 0;
 }
 
 h1 {
-    font-family: "Roboto", sans-serif;
-    font-weight: normal;
+    font-family: "Newsreader", sans-serif;
+    font-weight: 600;
     display: inline;
-    color: var(--color);
+    color: var(--primary);
 }
 
 main {
@@ -82,7 +89,7 @@ textarea:focus, input:focus {
     width: 10%;
     min-width: 200px;
     height: 25px;
-    background-color: var(--color-background);;
+    background-color: var(--background);;
     border-color: silver;
     color: var(--color);;
 }
@@ -101,7 +108,7 @@ textarea:focus, input:focus {
     top: 70px;
     width: 200px;
     height: calc(100vh - 70px);
-    background-color: var(--color-background);
+    background-color: var(--container);
     box-shadow: none;
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
@@ -138,8 +145,8 @@ textarea:focus, input:focus {
     align-items: center;
     justify-content: center;
     text-align: center;
-    border: 1px solid gray;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .ksiazka img {
@@ -147,16 +154,23 @@ textarea:focus, input:focus {
     max-height: 200px;
     width: auto;
     height: auto;
+    padding: 10px;
+    transition: transform 0.3s ease;
 }
 
 .ksiazka .tytul {
     margin: 0;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 .ksiazka .autor {
-    font-size: 14px;
+    font-size: 0.625rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
 }
 
 .ksiazka:hover {
@@ -164,12 +178,18 @@ textarea:focus, input:focus {
     transition: background-color 0.1s ease-in-out;
 }
 
+.ksiazka:hover img {
+    transform: scale(1.1);
+}
+
 .sticky {
     position: sticky;
     top: 0;
     padding: 0px 25px;
-    background-color: #ff6f61;
-    box-shadow: 0 2px 5px light-dark(black, white);
+    background-color: var(--container);
+    border-bottom: 1px solid var(--outline);
+    margin-bottom: 20px;
+    z-index: 1001;
 }
 
 .unselectable {
