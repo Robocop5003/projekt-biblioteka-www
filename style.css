@@ -3,11 +3,23 @@
 :root {
     color-scheme: light dark;
 
-    --primary: light-dark(#1A3A3A, #b59a5b); 
-    --background: light-dark(white,#111111);
-    --container: light-dark(#f7f7f7, #0c0c0c);
-    --color: light-dark(#1c1c19,white);
-    --outline: #3a322d;
+    /* Białe */
+    --color-white: white;
+
+    /* Szare i srebne */
+    --color-grey: grey;
+    --color-silver: silver;
+
+    /* Czarne */
+    --color-black: black;
+
+    /* Kolory użytkowe */
+    --primary: light-dark(var(--color-black),var(--color-white));
+    --background: light-dark(var(--color-white),var(--color-black));
+    --container: light-dark(var(--color-white),var(--color-black));
+    --color: light-dark(var(--color-black),var(--color-white));
+    --outline: light-dark(var(--color-black),var(--color-white));
+    --shadow: light-dark(var(--color-black),var(--color-white));
 }
 
 /* ========== Jasny i ciemny motyw ========== */
@@ -75,7 +87,7 @@ textarea:focus, input:focus {
 }
 
 #polecane h1 {
-    flex 0 0 100%;
+    flex: 0 0 100%;
     text-align: center;
 }
 
@@ -102,7 +114,7 @@ textarea:focus, input:focus {
     cursor:pointer;
 }
 
-#navigacja{
+#navigacja {
     position: fixed;
     transform: translateX(-100%);
     top: 70px;
@@ -116,24 +128,24 @@ textarea:focus, input:focus {
 
 #navigacja.active {
     transform: translateX(0);
-    box-shadow: 0 2px 5px light-dark(black, white);
+    box-shadow: 0 -3px 6px -3px var(--shadow);
 }
 
-#navigacja nav ul{
+#navigacja nav ul {
     list-style:none;
     color: var(--color);
 }
 
-#navigacja nav ul li{
+#navigacja nav ul li {
     padding: 10px;
 }
 
-#navigacja nav ul li a{
+#navigacja nav ul li a {
     color: var(--color);
     text-decoration:none;
 }
 
-#navigacja nav ul li a:hover{
+#navigacja nav ul li a:hover {
     text-decoration: underline;
 }
 
@@ -174,7 +186,7 @@ textarea:focus, input:focus {
 }
 
 .ksiazka:hover {
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: var(--color-silver);
     transition: background-color 0.1s ease-in-out;
 }
 
@@ -187,9 +199,9 @@ textarea:focus, input:focus {
     top: 0;
     padding: 0px 25px;
     background-color: var(--container);
-    border-bottom: 1px solid var(--outline);
     margin-bottom: 20px;
     z-index: 1001;
+    box-shadow: 0 -3px 6px var(--shadow);
 }
 
 .unselectable {
