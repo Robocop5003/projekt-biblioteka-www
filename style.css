@@ -9,7 +9,9 @@
 
     /* Szare i srebne */
     --color-grey: grey;
+    --color-darkGrey: rgb(30,30,30);
     --color-silver: silver;
+    --color-lightSilver: rgb(235,235,235);
 
     /* Czarne */
     --color-black: black;
@@ -19,13 +21,19 @@
     --color-salmon: #ff6f61;
     --color-orangeRed: #ff4500;
 
-    /* Kolory użytkowe */
+    /* === Kolory użytkowe === */
     --primary: light-dark(var(--color-black),var(--color-white));
     --background: light-dark(var(--color-white),var(--color-black));
-    --container: light-dark(var(--color-white),var(--color-black));
-    --color: light-dark(var(--color-black),var(--color-white));
+
+    --container: light-dark(var(--color-lightSilver),var(--color-darkGrey));
     --outline: light-dark(var(--color-black),var(--color-white));
+
     --shadow: light-dark(var(--color-black),var(--color-white));
+
+    /* Kolory do tekstu */
+    --mainText: light-dark(var(--color-black),var(--color-white));
+    --text: light-dark(var(--color-black),var(--color-white));
+    
 }
 
 /* ========== Jasny i ciemny motyw ========== */
@@ -44,7 +52,7 @@
 }
 
 body {
-    color: var(--color);
+    color: var(--text);
     background-color: var(--background);
     margin: 0;
 }
@@ -104,12 +112,24 @@ textarea:focus, input:focus {
 }
 
 #wyszukiwarka input {
-    width: 10%;
-    min-width: 200px;
-    height: 25px;
-    background-color: var(--background);;
-    border-color: silver;
-    color: var(--color);;
+    width: 50%;
+    min-width: 250px;
+    height: 50px;
+    margin-top: 25px;
+    
+    border-radius: 50px;
+            
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 20px;
+
+    background-color: var(--container);
+
+    border: none;
+}
+
+#wyszukiwarka input::placeholder {
+    color: var(--color-grey);
 }
 
 #menu-icon:hover {
@@ -126,7 +146,7 @@ textarea:focus, input:focus {
     top: 70px;
     width: 200px;
     height: calc(100vh - 70px);
-    background-color: var(--container);
+    background-color: var(--background);
     box-shadow: none;
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
@@ -139,7 +159,8 @@ textarea:focus, input:focus {
 
 #navigacja nav ul {
     list-style:none;
-    color: var(--color);
+    color: var(--text);
+    font-family: "Newsreader", sans-serif;
 }
 
 #navigacja nav ul li {
@@ -147,7 +168,7 @@ textarea:focus, input:focus {
 }
 
 #navigacja nav ul li a {
-    color: var(--color);
+    color: var(--text);
     text-decoration:none;
 }
 
@@ -204,7 +225,7 @@ textarea:focus, input:focus {
     position: sticky;
     top: 0;
     padding: 0px 25px;
-    background-color: var(--container);
+    background-color: var(--background);
     margin-bottom: 20px;
     z-index: 1001;
     box-shadow: 0 -3px 6px var(--shadow);
