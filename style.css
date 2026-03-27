@@ -5,6 +5,7 @@
 
     /* Białe */
     --color-white: white;
+    --color-eggshell: #f5e8d8;
 
     /* Szare i srebne */
     --color-grey: grey;
@@ -12,6 +13,11 @@
 
     /* Czarne */
     --color-black: black;
+    --color-oil: #1c1c1c;
+
+    /* ~Pomarańczowe */
+    --color-salmon: #ff6f61;
+    --color-orangeRed: #ff4500;
 
     /* Kolory użytkowe */
     --primary: light-dark(var(--color-black),var(--color-white));
