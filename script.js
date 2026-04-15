@@ -39,7 +39,13 @@ function modeSwitchClick() {
     initThemeIcon();
 }
 
+<<<<<<< HEAD
 // ========== Książki ==========
+=======
+function randomInt(max, min = 0) {
+    return Math.floor(Math.random() * max) + min;
+}
+>>>>>>> 10c72f3 (wstepna integracja api)
 
 async function getData(what) {
     const url = `https://wolnelektury.pl/api/${what}`;
@@ -53,6 +59,7 @@ async function getBooks() {
     return json;
 }
 
+<<<<<<< HEAD
 function ksiazkaHTMLString(img, title, author) {
     return `
         <img src="${img}"></img>
@@ -61,14 +68,27 @@ function ksiazkaHTMLString(img, title, author) {
     `;
 }
 
+=======
+>>>>>>> 10c72f3 (wstepna integracja api)
 async function initBooks() {
     const books = await getBooks();
     const len = books.length;
     const elements = document.getElementsByClassName("ksiazka");
     Array.from(elements).forEach(element => {
         const randomBook = books[randomInt(len)]
+<<<<<<< HEAD
         element.innerHTML = ksiazkaHTMLString(randomBook.simple_thumb, randomBook.title, randomBook.author);
     });
 }
 
 initBooks()
+=======
+        element.innerHTML = `
+            <img src="${randomBook.simple_thumb}"></img>
+            <p>${randomBook.author} - ${randomBook.title}</p>
+        `;
+    });
+}
+
+initBooks()
+>>>>>>> 10c72f3 (wstepna integracja api)
