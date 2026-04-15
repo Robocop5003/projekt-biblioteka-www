@@ -70,14 +70,6 @@ main {
     flex-direction: column;
 }
 
-<<<<<<< HEAD
-=======
-textarea:focus, input:focus {
-    outline: none;
-}
-
-
->>>>>>> 10c72f3 (wstepna integracja api)
 /* ========== ID ========== */
 
 /* === Header === */
@@ -89,21 +81,7 @@ textarea:focus, input:focus {
     height: 70px;
 }
 
-<<<<<<< HEAD
 /* === Polecane === */
-=======
-#move h1 {
-    animation: move 10s linear infinite;
-}
-
-#polecane_ksiazki {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    width: 60%;
-    margin: 0 auto;
-}
->>>>>>> 10c72f3 (wstepna integracja api)
 
 #polecane {
     display: flex;
@@ -207,7 +185,6 @@ textarea:focus, input:focus {
 
 .ksiazka {
     display: flex;
-<<<<<<< HEAD
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -223,19 +200,6 @@ textarea:focus, input:focus {
     height: auto;
     padding: 10px;
     transition: transform 0.3s ease;
-=======
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.ksiazka img {
-  max-width: 300px;
-  max-height: 200px;
-  width: auto;
-  height: auto;
->>>>>>> 10c72f3 (wstepna integracja api)
 }
 
 .ksiazka .tytul {
