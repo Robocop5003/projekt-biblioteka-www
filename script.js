@@ -1,12 +1,20 @@
+// ========== Funkcje pomocnicze ==========
+
+function randomInt(max, min = 0) {
+    return Math.floor(Math.random() * max) + min;
+}
+
+// ========== Przyciski na sticky ==========
+
 const menuButton = document.getElementById("menu-icon");
 const modeSwitchButton = document.getElementById("mode-switch");
 const navigacja = document.getElementById("navigacja");
 
-if(menuButton)
+if(menuButton) {
     menuButton.addEventListener("click", menuClick);
+}
 
-if(modeSwitchButton)
-{
+if(modeSwitchButton) {
     modeSwitchButton.addEventListener("click", modeSwitchClick);
     initThemeIcon();
 }
@@ -19,7 +27,7 @@ function initThemeIcon() {
         modeSwitchButton.innerHTML = "dark_mode";
 }
 
-function menuClick(){
+function menuClick() {
     navigacja.classList.toggle("active");
 }
 
@@ -31,9 +39,7 @@ function modeSwitchClick() {
     initThemeIcon();
 }
 
-function randomInt(max, min = 0) {
-    return Math.floor(Math.random() * max) + min;
-}
+// ========== Książki ==========
 
 async function getData(what) {
     const url = `https://wolnelektury.pl/api/${what}`;
