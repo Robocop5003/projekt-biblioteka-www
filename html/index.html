@@ -20,8 +20,8 @@
     <title>Biblioteka</title> <!--todo < Nazwa strony do wymyślenia -->
     
     <link rel="stylesheet" href="../style.css">
-    <script defer src="../js/script.js"></script>
     <script defer src="../js/script_index.js"></script>
+    <script defer src="../js/script.js"></script>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode,light_mode,menu"/>
 
@@ -51,7 +51,9 @@
         <!-- Wyszukiwarka -->
 
         <section id="wyszukiwarka">
-            <input type="text" placeholder="Wyszukaj ksiazke...">
+            <form action="wyszukiwarka.html" method="GET">
+                <input type="text" name="zapytanie" placeholder="Wyszukaj ksiazke...">
+            </form>
         </section>
 
         <!-- Polecane książki -->
