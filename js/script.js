@@ -12,7 +12,9 @@ class Naglowek extends HTMLElement {
             <div id="head" class="sticky"> <!--todo < Zmieńmy może tego id, żeby nie myliła się nam z <head> -->
                 <header>
                     <span id="menu-icon" alt="Menu" class="material-symbols-outlined unselectable">menu</span>
-                    <h1 id="logo">Biblioteka</h1>
+                    <a href="./index.html" style="text-decoration: none; color: inherit;">
+                        <h1 id="logo">Biblioteka</h1>
+                    </a>
                     <span id="mode-switch" alt="Zmiana motywu" class="material-symbols-outlined unselectable"></span>
                 </header>
              </div>
@@ -27,10 +29,10 @@ class Nawigacja extends HTMLElement {
         <div id="navigacja">
             <nav>
                 <ul>
-                    <li><a href="#">Gatunki</a></li>
-                    <li><a href="#">Epoki</a></li>
-                    <li><a href="#">Rodzaje</a></li>
-                    <li><a href="#">Motywy</a></li>
+                    <li><a href="./wyszukiwarka.html?filter=gatunki">Gatunki</a></li>
+                    <li><a href="./wyszukiwarka.html?filter=epoki">Epoki</a></li>
+                    <li><a href="./wyszukiwarka.html?filter=rodzaje">Rodzaje</a></li>
+                    <li><a href="./wyszukiwarka.html?filter=motywy">Motywy</a></li>
                 </ul>
             </nav>
         </div>`;
