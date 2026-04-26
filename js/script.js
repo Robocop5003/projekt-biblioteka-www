@@ -4,6 +4,40 @@ function randomInt(max, min = 0) {
     return Math.floor(Math.random() * max) + min;
 }
 
+// ========== Web Componenty ==========
+
+class Naglowek extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <div id="head" class="sticky"> <!--todo < Zmieńmy może tego id, żeby nie myliła się nam z <head> -->
+                <header>
+                    <span id="menu-icon" alt="Menu" class="material-symbols-outlined unselectable">menu</span>
+                    <h1 id="logo">Biblioteka</h1>
+                    <span id="mode-switch" alt="Zmiana motywu" class="material-symbols-outlined unselectable"></span>
+                </header>
+             </div>
+        `;
+    }
+}
+customElements.define('komponent-naglowek', Naglowek);
+
+class Nawigacja extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <div id="navigacja">
+            <nav>
+                <ul>
+                    <li><a href="#">Gatunki</a></li>
+                    <li><a href="#">Epoki</a></li>
+                    <li><a href="#">Rodzaje</a></li>
+                    <li><a href="#">Motywy</a></li>
+                </ul>
+            </nav>
+        </div>`;
+    }
+}
+customElements.define('komponent-nawigacja', Nawigacja);
+
 // ========== Przyciski na sticky ==========
 
 const menuButton = document.getElementById("menu-icon");
@@ -72,3 +106,4 @@ async function initBooks() {
 }
 
 initBooks()
+
