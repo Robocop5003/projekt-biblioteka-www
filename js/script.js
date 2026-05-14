@@ -32,12 +32,15 @@ class Nawigacja extends HTMLElement {
                     <li><a href="./wyszukiwarka.html?filter=gatunki">Gatunki</a></li>
                     <li><a href="./wyszukiwarka.html?filter=epoki">Epoki</a></li>
                     <li><a href="./wyszukiwarka.html?filter=rodzaje">Rodzaje</a></li>
-                    <li><a href="./wyszukiwarka.html?filter=motywy">Motywy</a></li>
                 </ul>
             </nav>
         </div>`;
     }
 }
+
+//<li><a href="./wyszukiwarka.html?filter=motywy">Motywy</a></li>
+// motywow nie ma w ksiazkach w api
+
 customElements.define('komponent-nawigacja', Nawigacja);
 
 // ========== Przyciski na sticky ==========
@@ -89,6 +92,26 @@ async function getBooks() {
     return json;
 }
 
+async function getGenres() {
+    const json = await getData("genres");
+    return json;
+}
+
+async function getEpochs() {
+    const json = await getData("epochs");
+    return json;
+}
+
+async function getKinds() {
+    const json = await getData("kinds");
+    return json;
+}
+
+async function getThemes() {
+    const json = await getData("themes");
+    return json;
+}
+
 function ksiazkaHTMLString(img, title, author) {
     return `
         <img src="${img}"></img>
@@ -96,16 +119,3 @@ function ksiazkaHTMLString(img, title, author) {
         <p class="autor">${author}</p>
     `;
 }
-
-async function initBooks() {
-    const books = await getBooks();
-    const len = books.length;
-    const elements = document.getElementsByClassName("ksiazka");
-    Array.from(elements).forEach(element => {
-        const randomBook = books[randomInt(len)]
-        element.innerHTML = ksiazkaHTMLString(randomBook.simple_thumb, randomBook.title, randomBook.author);
-    });
-}
-
-initBooks()
-
