@@ -126,6 +126,10 @@ async function initDetailedList(filter, subfilter) {
         itemElement.innerHTML = browserElementHTMLString(item.simple_thumb, item.title, item.author);
         itemElement.addEventListener('click', () => {
             //TODO: strony konretnych ksiazek
+
+            //todo // Mam problem z tą funkcją, bo nawet jak zrobię to co na dole to nadal to się nie printuje //
+            console.log("test");
+            
             //window.location.href = `./ksiazka.html?tytul=`;
         });
         
