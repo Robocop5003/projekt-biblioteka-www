@@ -97,17 +97,18 @@ async function initBookList(titleName)
     });
 }
 
-async function initFilterList(filterName)
+async function initBookList(titleName)
 {
-    const filtersJSON = await getFilterCategoriesJSON(filterName);
+    const filtersJSON = await getBooksByTitle(titleName);
     const browserList = document.getElementById("browserList");
-    filtersJSON.forEach(filter => {
+    filtersJSON.forEach(item => {
         const filterElement = document.createElement("div");
         filterElement.classList.add("browserElement");
-        filterElement.innerHTML = filterHTMLString(filter.name);
-        filterElement.dataset.href = filter.href;
+        filterElement.innerHTML = browserElementHTMLString(item.simple_thumb, item.title, item.author);
+
+        filterElement.dataset.href = item.href;
         filterElement.addEventListener('click', () => {
-            window.location.href = `./wyszukiwarka.html?filter=${encodeURIComponent(filterName)}&subfilter=${encodeURIComponent(filter.name)}`;
+            window.location.href = `./ksiazka.html?tytul=${item.slug}`;
         });
         browserList.appendChild(filterElement);
     });
@@ -125,11 +126,7 @@ async function initDetailedList(filter, subfilter) {
         itemElement.classList.add("browserElement", "finalItem");
         itemElement.innerHTML = browserElementHTMLString(item.simple_thumb, item.title, item.author);
         itemElement.addEventListener('click', () => {
-            //TODO: strony konretnych ksiazek
-
-            //todo // Mam problem z tą funkcją, bo nawet jak zrobię to co na dole to nadal to się nie printuje //
-            console.log("test");
-            
+            //TODO: strony konkretnych ksiazek
             //window.location.href = `./ksiazka.html?tytul=`;
         });
         
