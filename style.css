@@ -24,6 +24,7 @@
     /* === Kolory użytkowe === */
     --primary: light-dark(var(--color-black),var(--color-white));
     --background: light-dark(var(--color-white),var(--color-black));
+    --background-background: light-dark(var(--color-white),var(--color-black));
 
     --container: light-dark(var(--color-lightSilver),var(--color-darkGrey));
     --outline: light-dark(var(--color-black),var(--color-white));
@@ -52,7 +53,7 @@
 }
 
 body {
-    background-color: var(--background);
+    background-color: var(--background-background);
     color: var(--text);
 
     margin: 0;
