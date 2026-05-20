@@ -9,11 +9,11 @@ function randomInt(max, min = 0) {
 class Naglowek extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <div id="head" class="sticky"> <!--todo < Zmieńmy może tego id, żeby nie myliła się nam z <head> -->
+            <div id="head" class="sticky">
                 <header>
                     <span id="menu-icon" alt="Menu" class="material-symbols-outlined unselectable">menu</span>
                     <a href="./index.html" style="text-decoration: none; color: inherit;">
-                        <h1 id="logo">Biblioteka</h1>
+                        <h1 id="logo">Lekturoteka</h1>
                     </a>
                     <span id="mode-switch" alt="Zmiana motywu" class="material-symbols-outlined unselectable"></span>
                 </header>
