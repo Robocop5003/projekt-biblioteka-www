@@ -65,12 +65,22 @@ h1 {
     display: inline;
 }
 
-main {
+
+/* ========== ID ========== */
+
+/* === Podstrona glowna === */
+
+#index main {
     display: flex;
     flex-direction: column;
 }
 
-/* ========== ID ========== */
+/* === Podstrona wyszukiwarka === */
+
+#browser main {
+    display: flex;
+    flex-direction: column;
+}
 
 /* === Header === */
 
@@ -93,13 +103,6 @@ main {
     text-align: center;
 }
 
-#polecane_ksiazki {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
-    width: 60%;
-    margin: 0 auto;
-}
 
 /* === Wyszukiwarka === */
 
@@ -179,6 +182,14 @@ main {
     text-decoration: underline;
 }
 
+/* === Lista elementow wyszukiwarki === */
+
+#browserList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;  
+}
+
 /* ========== Klasy ========== */
 
 /* === Książka === */
@@ -224,6 +235,34 @@ main {
 
 .ksiazka:hover img {
     transform: scale(1.1);
+}
+
+.ksiazki_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+
+.browserElement {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    border: 1px solid white;
+    padding: 25px;
+    cursor: pointer;
+    max-height: 200px;
+}
+
+.browserElement img{
+    max-height: 150px;
+}
+
+.bookInfo {
+    display: flex;
+    flex-direction: column;
 }
 
 /* === Sticky === */
