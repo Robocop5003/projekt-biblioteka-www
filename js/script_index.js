@@ -5,8 +5,12 @@ async function initBooks() {
     Array.from(elements).forEach(element => {
         const randomBook = books[randomInt(len)]
         element.innerHTML = ksiazkaHTMLString(randomBook.simple_thumb, randomBook.title, randomBook.author);
+
+        element.addEventListener("click", () => {
+            savedBook=randomBook;
+            window.location.href = `./ksiazka.html?tytul=${savedBook.slug}`;
+        });
     });
 }
 
 initBooks()
-
