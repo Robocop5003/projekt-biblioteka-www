@@ -38,10 +38,26 @@ class Nawigacja extends HTMLElement {
     }
 }
 
+
+
+
 //<li><a href="./wyszukiwarka.html?filter=motywy">Motywy</a></li>
 // motywow nie ma w ksiazkach w api
 
 customElements.define('komponent-nawigacja', Nawigacja);
+
+class Wyszukiwarka extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <section id="wyszukiwarka">
+            <form action="wyszukiwarka.html" method="GET">
+                <input type="text" name="zapytanie" id="wyszukiwarka-textbox" placeholder="Wyszukaj ksiazke...">
+            </form>
+        </section>`;
+    }
+}
+
+customElements.define('komponent-wyszukiwarka', Wyszukiwarka);
 
 // ========== Przyciski na sticky ==========
 
