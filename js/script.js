@@ -45,6 +45,7 @@ customElements.define('komponent-nawigacja', Nawigacja);
 const menuButton = document.getElementById("menu-icon");
 const modeSwitchButton = document.getElementById("mode-switch");
 const nawigacja = document.getElementById("nawigacja");
+const main = document.getElementById("main");
 
 if(menuButton) {
     menuButton.addEventListener("click", menuClick);
@@ -65,6 +66,7 @@ function initThemeIcon() {
 
 function menuClick() {
     nawigacja.classList.toggle("active");
+    main.classList.toggle("active");
 }
 
 function modeSwitchClick() {
