@@ -1,40 +1,54 @@
 /* ========== Root ========== */
 
 :root {
-    color-scheme: light dark;
-
     /* Białe */
+
     --color-white: white;
     --color-eggshell: #f5e8d8;
 
     /* Szare i srebne */
+
     --color-grey: grey;
     --color-darkGrey: rgb(30,30,30);
     --color-silver: silver;
     --color-lightSilver: rgb(235,235,235);
 
     /* Czarne */
+
     --color-black: black;
-    --color-oil: #1c1c1c;
+    --color-charcoal: #121212;
 
     /* ~Pomarańczowe */
+
     --color-salmon: #ff6f61;
     --color-orangeRed: #ff4500;
 
+    /* === Kolory light-dark === */
+    
+    color-scheme: light dark;
+
+    --light-dark-whiteBlack: light-dark(var(--color-white),var(--color-black));
+    --light-dark-whiteCharcoal: light-charcoal(var(--color-white),var(--color-charcoal));
+
+    --light-dark-blackWhite: light-dark(var(--color-black),var(--color-white));
+
     /* === Kolory użytkowe === */
-    --primary: light-dark(var(--color-black),var(--color-white));
-    --background: light-dark(var(--color-white),var(--color-black));
-    --background-background: light-dark(var(--color-white),var(--color-black));
+
+    --primary: var(--light-dark-blackWhite);
+    --background: var(--light-dark-whiteBlack);
+    --background-background: var(--light-dark-whiteCharcoal); /* Tło do głównej części strony */
+    --background-sticky: var(--light-dark-whiteBlack);
+    --background-navigation: var(var(--light-dark-whiteCharcoal));
 
     --container: light-dark(var(--color-lightSilver),var(--color-darkGrey));
-    --outline: light-dark(var(--color-black),var(--color-white));
+    --outline: var(--light-dark-blackWhite);
 
-    --shadow: light-dark(var(--color-black),var(--color-white));
+    --shadow: var(--color-black);
 
     /* Kolory do tekstu */
-    --mainText: light-dark(var(--color-black),var(--color-white));
-    --text: light-dark(var(--color-black),var(--color-white));
-    
+
+    --mainText: var(--light-dark-blackWhite);
+    --text: var(--light-dark-blackWhite);
 }
 
 /* ========== Jasny i ciemny motyw ========== */
@@ -65,7 +79,6 @@ h1 {
     font-weight: 800;
     display: inline;
 }
-
 
 /* ========== ID ========== */
 
@@ -147,39 +160,40 @@ h1 {
 
 /* === Nawigacja === */
 
-#navigacja {
+#nawigacja {
     position: fixed;
     transform: translateX(-100%);
     top: 70px;
     width: 200px;
     height: calc(100vh - 70px);
-    background-color: var(--background);
+    background-color: var(--background-navigation);
     box-shadow: none;
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
+    border-right: 2px solid var(--light-dark-whiteBlack);
 }
 
-#navigacja.active {
+#nawigacja.active {
     transform: translateX(0);
     box-shadow: 0 -3px 6px -3px var(--shadow);
 }
 
-#navigacja nav ul {
+#nawigacja nav ul {
     list-style:none;
     color: var(--text);
     font-family: "Newsreader", sans-serif;
 }
 
-#navigacja nav ul li {
+#nawigacja nav ul li {
     padding: 10px;
 }
 
-#navigacja nav ul li a {
+#nawigacja nav ul li a {
     color: var(--text);
     text-decoration:none;
 }
 
-#navigacja nav ul li a:hover {
+#nawigacja nav ul li a:hover {
     text-decoration: underline;
 }
 
@@ -272,7 +286,7 @@ h1 {
     position: sticky;
     top: 0;
     padding: 0px 25px;
-    background-color: var(--background);
+    background-color: var(--background-sticky);
     margin-bottom: 20px;
     z-index: 1001;
     box-shadow: 0 -3px 6px var(--shadow);

@@ -88,23 +88,6 @@ async function initBookList(titleName)
         const filterElement = document.createElement("div");
         filterElement.classList.add("browserElement");
         filterElement.innerHTML = browserElementHTMLString(item.simple_thumb, item.title, item.author);
-        filterElement.dataset.href = item.href;
-        filterElement.addEventListener('click', () => {
-            //TODO: strony konretnych ksiazek
-            //window.location.href = `./ksiazka.html?tytul=`;
-        });
-        browserList.appendChild(filterElement);
-    });
-}
-
-async function initBookList(titleName)
-{
-    const filtersJSON = await getBooksByTitle(titleName);
-    const browserList = document.getElementById("browserList");
-    filtersJSON.forEach(item => {
-        const filterElement = document.createElement("div");
-        filterElement.classList.add("browserElement");
-        filterElement.innerHTML = browserElementHTMLString(item.simple_thumb, item.title, item.author);
 
         filterElement.dataset.href = item.href;
         filterElement.addEventListener('click', () => {

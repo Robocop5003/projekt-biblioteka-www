@@ -26,7 +26,7 @@ customElements.define('komponent-naglowek', Naglowek);
 class Nawigacja extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <div id="navigacja">
+        <div id="nawigacja">
             <nav>
                 <ul>
                     <li><a href="./wyszukiwarka.html?filter=gatunki">Gatunki</a></li>
@@ -38,16 +38,13 @@ class Nawigacja extends HTMLElement {
     }
 }
 
-//<li><a href="./wyszukiwarka.html?filter=motywy">Motywy</a></li>
-// motywow nie ma w ksiazkach w api
-
 customElements.define('komponent-nawigacja', Nawigacja);
 
 // ========== Przyciski na sticky ==========
 
 const menuButton = document.getElementById("menu-icon");
 const modeSwitchButton = document.getElementById("mode-switch");
-const navigacja = document.getElementById("navigacja");
+const nawigacja = document.getElementById("nawigacja");
 
 if(menuButton) {
     menuButton.addEventListener("click", menuClick);
@@ -67,7 +64,7 @@ function initThemeIcon() {
 }
 
 function menuClick() {
-    navigacja.classList.toggle("active");
+    nawigacja.classList.toggle("active");
 }
 
 function modeSwitchClick() {
