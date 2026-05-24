@@ -7,8 +7,7 @@ async function initBooks() {
         element.innerHTML = ksiazkaHTMLString(randomBook.simple_thumb, randomBook.title, randomBook.author);
 
         element.addEventListener("click", () => {
-            savedBook=randomBook;
-            window.location.href = `./ksiazka.html?tytul=${savedBook.slug}`;
+            window.location.href = `./ksiazka.html?tytul=${randomBook.slug}`;
         });
     });
 }
