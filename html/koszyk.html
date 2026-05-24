@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<!-- ========== Head ========== -->
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lekturoteka</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ksiazka.css">
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js/ksiazka.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode,light_mode,menu"/>
+
+    <!-- === Skrypt ustawiający odpowiedni motyw przy starcie strony === -->
+    
+    <script>
+        const theme = localStorage.getItem("theme") || "light";
+        if (theme == "dark") {document.documentElement.classList.add("dark");} 
+        else {document.documentElement.classList.add("light");}
+    </script>
+</head>
+
+<!-- ========== Body ========== -->
+
+<body>
+    <!-- === Sticky na górze === -->
+
+    <komponent-naglowek></komponent-naglowek>
+
+    <!-- === Menu otwierane po lewej === -->
+
+    <komponent-nawigacja></komponent-nawigacja>
+
+    <!-- === Koszyk === -->
+
+    <main id="main">
+        <div id="koszyk"></div>
+    </main>
+    
+</body>
+</html>
