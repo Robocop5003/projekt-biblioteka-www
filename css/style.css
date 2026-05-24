@@ -17,6 +17,11 @@
 
     --color-black: black;
     --color-charcoal: #121212;
+    --color-greyBlack: rgb(39,39,39);
+
+    /* Niebieskie */
+
+    --color-blueYoutubelink: rgb(62,166,255);
 
     /* === Kolory light-dark === */
     
@@ -27,6 +32,7 @@
     --light-dark-whiteCharcoal: light-dark(var(--color-white),var(--color-charcoal));
 
     --light-dark-blackWhite: light-dark(var(--color-black),var(--color-white));
+    --light-dark-charcoalWhiteAlmost: light-dark(var(--color-charcoal),var(--color-whiteAlmost));
 
     /* === Kolory użytkowe === */
 
@@ -79,7 +85,7 @@ h1 {
 }
 
 a {
-    color: var(--light-dark-blackWhite);
+    color: var(--color-blueYoutubelink);
 }
 
 /* === Strona główna === */

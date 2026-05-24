@@ -6,24 +6,63 @@
     text-align: center;
 }
 
+/* Tytuł i autor */
+
 #ksiazkaDetaleTytul {
     font-size: 50px;
 
     min-width: 400px;
     max-width: calc(85% - 200px);
 
-    margin-top: 15px;
+    margin-top: 0px;
 }
 
 #ksiazkaDetaleAutor {
     font-size: 30px;
 
     margin-top: -30px;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
+
+    color: var(--light-dark-charcoalWhiteAlmost);
 }
+
+#ksiazkaDetaleAutor:hover {
+    color: var(--color-blueYoutubelink);
+}
+
+/* Okładka */
 
 #ksiazkaDetaleOkladka {
     box-shadow: 0 0 35px var(--box-shadow); /* Tu jest ten glow */
+}
 
-    margin-bottom: 45px;
+/* Rzeczy pod okładką */
+
+.ksiazkaDetaleGrubyTekst {
+    font-weight: bold;
+
+    color: var(--light-dark-charcoalWhiteAlmost);
+}
+
+#ksiazkaDetaleEpokaRodzajGatunek {
+    font-size: 20px;
+    margin-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    list-style: none;
+}
+
+/* === Linki === */
+
+.ksiazkaDetaleLinki {
+    text-decoration: none;
+    color: var(--light-dark-charcoalWhiteAlmost)
+}
+
+.ksiazkaDetaleLinki:hover {
+    text-decoration: underline;
+    color: var(--color-blueYoutubelink);
 }

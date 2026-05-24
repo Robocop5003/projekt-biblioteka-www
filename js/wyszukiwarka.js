@@ -110,7 +110,6 @@ async function initDetailedList(filter, subfilter) {
         itemElement.innerHTML = browserElementHTMLString(item.simple_thumb, item.title, item.author);
         itemElement.addEventListener('click', () => {
             //TODO: strony konkretnych ksiazek
-            //window.location.href = `./ksiazka.html?tytul=`;
         });
         
         browserList.appendChild(itemElement);

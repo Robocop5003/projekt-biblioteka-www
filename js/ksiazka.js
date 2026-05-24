@@ -19,7 +19,8 @@ async function wlaczKsiazkaDetale() {
     }
 
     document.getElementById("ksiazkaDetale").innerHTML=ksiazkaDetale(
-        ksiazkaZapisana.simple_thumb,ksiazkaZapisana.title,ksiazkaZapisana.author);
+        ksiazkaZapisana.title,ksiazkaZapisana.author,ksiazkaZapisana.simple_thumb,
+        ksiazkaZapisana.epoch,ksiazkaZapisana.kind,ksiazkaZapisana.genre);
 
     ksiazkaKolorTla(ksiazkaZapisana);
 }
@@ -30,14 +31,38 @@ const motywZmiana = document.getElementById("mode-switch");
 motywZmiana.addEventListener("click", () => {
     if (!ksiazkaZapisana) return;
     ksiazkaKolorTla(ksiazkaZapisana);
-
-    console.log(ksiazkaZapisana);
 });
 
-function ksiazkaDetale(img, title, author) {
+function ksiazkaDetale(tytul,autor,okladka,epoka,rodzaj,gatunek) {
     return `
-        <h3 class="tytul" id="ksiazkaDetaleTytul">${title}</h3>
-        <a id="ksiazkaDetaleAutor" href="youtube.com">${author}</a>
-        <img src="${img}" id="ksiazkaDetaleOkladka"></img>
+        <h3 class="tytul" id="ksiazkaDetaleTytul">${tytul}</h3>
+        <a class="ksiazkaDetaleLinki" id="ksiazkaDetaleAutor"href="./wyszukiwarka.html?filter=${autor}">
+            ${autor}
+        </a>
+
+        <img src="${okladka}" id="ksiazkaDetaleOkladka"></img>
+
+        <nav><ul id="ksiazkaDetaleEpokaRodzajGatunek">
+            <li>
+                <span class="ksiazkaDetaleGrubyTekst">Epoka:</span>
+                <a class="ksiazkaDetaleLinki" href="./wyszukiwarka.html?filter=${epoka}">
+                    ${epoka}
+                </a>
+            </li>
+
+            <li>
+                <span class="ksiazkaDetaleGrubyTekst">Rodzaj:</span>
+                <a class="ksiazkaDetaleLinki" href="./wyszukiwarka.html?filter=${rodzaj}">
+                    ${rodzaj}
+                </a>
+            </li>
+
+            <li>
+                <span class="ksiazkaDetaleGrubyTekst">Gatunek:</span>
+                <a class="ksiazkaDetaleLinki" href="./wyszukiwarka.html?filter=${gatunek}">
+                    ${gatunek}
+                </a>
+            </li>
+        </ul></nav>
     `;
 }
