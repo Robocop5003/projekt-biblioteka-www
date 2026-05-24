@@ -8,11 +8,11 @@ const params = new URLSearchParams(window.location.search);
 const query = params.get('zapytanie');
 
 if (query) {
-    const heading = document.createElement('h1');
-    heading.textContent = `Wpisano do wyszukiwarki: "${query}"`;
-    mainContent.prepend(heading);
+    document.getElementById("wyszukiwarka-textbox").value = query;
 
     initBookList(query);
+
+
 }
 
 // ========== Pobranie filtru z URL =======
