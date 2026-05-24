@@ -40,6 +40,19 @@ class Nawigacja extends HTMLElement {
 
 customElements.define('komponent-nawigacja', Nawigacja);
 
+class Wyszukiwarka extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+        <section id="wyszukiwarka">
+            <form action="wyszukiwarka.html" method="GET">
+                <input type="text" name="zapytanie" id="wyszukiwarka-textbox" placeholder="Wyszukaj ksiazke...">
+            </form>
+        </section>`;
+    }
+}
+
+customElements.define('komponent-wyszukiwarka', Wyszukiwarka);
+
 // ========== Przyciski na sticky ==========
 
 const menuButton = document.getElementById("menu-icon");
