@@ -1,3 +1,29 @@
+#ksiazkaDetale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#ksiazkaDetaleTytul {
+    font-size: 50px;
+
+    min-width: 400px;
+    max-width: calc(85% - 200px);
+
+    margin-top: 15px;
+}
+
+#ksiazkaDetaleAutor {
+    font-size: 30px;
+
+    margin-top: -30px;
+    margin-bottom: 45px;
+}
+
 #ksiazkaDetaleOkladka {
-    box-shadow: 0 0 35px var(--box-shadow);
+    box-shadow: 0 0 35px var(--box-shadow); /* Tu jest ten glow */
+
+    margin-bottom: 45px;
 }

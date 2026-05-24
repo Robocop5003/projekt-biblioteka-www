@@ -1,21 +1,4 @@
 function ksiazkaKolorTla(ksiazkaZapisana) {
-    // const aktualnyMotywCzyJasny=document.documentElement.classList.contains("light");
-    // let kolorGlowny=aktualnyMotywCzyJasny ? "#ffffff" : "#000000";
-    // let kolorAkcent=ksiazkaZapisana.cover_color;
-    
-    // if (aktualnyMotywCzyJasny===true) {
-    //     document.documentElement.style.setProperty(
-    //         '--background-background',
-    //         `color-mix(in srgb, ${kolorGlowny} 90%, ${kolorAkcent} 10%)`
-    //     );
-    // }
-    // else {
-    //     document.documentElement.style.setProperty(
-    //         '--background-background',
-    //         `color-mix(in srgb, ${kolorGlowny} 50%, ${kolorAkcent} 50%)`
-    //     );
-    // }
-
     document.documentElement.style.setProperty(
         '--box-shadow',
         `${ksiazkaZapisana.cover_color}`
@@ -47,12 +30,14 @@ const motywZmiana = document.getElementById("mode-switch");
 motywZmiana.addEventListener("click", () => {
     if (!ksiazkaZapisana) return;
     ksiazkaKolorTla(ksiazkaZapisana);
+
+    console.log(ksiazkaZapisana);
 });
 
 function ksiazkaDetale(img, title, author) {
     return `
-        <img src="${img}" id="ksiazkaDetaleOkladka"></img>
         <h3 class="tytul" id="ksiazkaDetaleTytul">${title}</h3>
-        <p class="autor" id="ksiazkaDetaleAutor">${author}</p>
+        <a id="ksiazkaDetaleAutor" href="youtube.com">${author}</a>
+        <img src="${img}" id="ksiazkaDetaleOkladka"></img>
     `;
 }

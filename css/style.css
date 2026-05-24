@@ -69,11 +69,17 @@ body {
     margin: 0;
     
     font-family: "Newsreader", sans-serif;
+
+    overflow-x: hidden;
 }
 
 h1 {
     font-weight: 800;
     display: inline;
+}
+
+a {
+    color: var(--light-dark-blackWhite);
 }
 
 /* === Strona główna === */
@@ -167,22 +173,22 @@ main.active {
 
 /* === Nawigacja === */
 
-#nawigacja {
+#nawigacja { /*todo /* Zmienić, żeby cień nie znikał */
     position: fixed;
-    transform: translateX(-100%);
+    transform: translateX(-104%); /* 104%, żeby cień był widoczny podczasz animacji ukrywania, ale nie był widoczny po */
     top: 70px;
     width: 200px;
     height: calc(100vh - 70px);
     background-color: var(--background-navigation);
-    box-shadow: none;
+    box-shadow: 0 -3px 6px -3px var(--shadow);
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
     border-right: 2px solid var(--light-dark-whiteBlack);
+
 }
 
 #nawigacja.active {
     transform: translateX(0);
-    box-shadow: 0 -3px 6px -3px var(--shadow);
 }
 
 #nawigacja nav ul {
