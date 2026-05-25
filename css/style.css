@@ -256,7 +256,6 @@ main.active {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 100%;
-    
 }
 
 .ksiazka .autor {
@@ -270,6 +269,7 @@ main.active {
 .ksiazka:hover {
     background-color: var(--color-silver);
     transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
 }
 
 .ksiazka:hover img {

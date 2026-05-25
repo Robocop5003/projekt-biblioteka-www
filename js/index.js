@@ -9,6 +9,7 @@ async function initBooks() {
         element.addEventListener("click", () => {
             window.location.href = `./ksiazka.html?tytul=${randomBook.slug}`;
         });
+        element.setAttribute("title", `${randomBook.title}`);
     });
 }
 
