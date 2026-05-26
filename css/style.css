@@ -207,7 +207,7 @@ main.active {
 
 /* === Nawigacja === */
 
-#nawigacja { /*todo /* Zmienić, żeby cień nie znIał */
+#nawigacja {
     position: fixed;
     transform: translateX(-104%); /* 104%, żeby cień był widoczny podczasz animacji ukrywania, ale nie był widoczny po */
     top: 70px;
