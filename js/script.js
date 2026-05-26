@@ -11,10 +11,17 @@ class Naglowek extends HTMLElement {
         this.innerHTML = `
             <div id="head" class="sticky">
                 <header>
+                    <!-- Ikony po lewej -->
                     <span id="menu-icon" alt="Menu" class="material-symbols-outlined unselectable">menu</span>
+
+                    <!-- Ikony po środku -->
                     <a href="./index.html" style="text-decoration: none; color: inherit;">
-                        <h1 id="logo">Lekturoteka</h1>
+                        <h1 id="logo">Lekturoteka</h1> <!--todo NAPRAWIĆ TO, ŻEBY BYŁO PO ŚRODKU!!! -->
                     </a>
+
+                    <!-- Ikony po prawej -->
+                    <span id="koszykIkona" alt="Koszyk" class="material-symbols-outlined unselectable">shopping_basket</span>
+                    <span id="kontoIkona" alt="Konto" class="material-symbols-outlined unselectable">account_circle</span>
                     <span id="mode-switch" alt="Zmiana motywu" class="material-symbols-outlined unselectable"></span>
                 </header>
              </div>
@@ -56,6 +63,8 @@ customElements.define('komponent-wyszukiwarka', Wyszukiwarka);
 // ========== Przyciski na sticky ==========
 
 const menuButton = document.getElementById("menu-icon");
+const koszykPrzycisk = document.getElementById("koszykIkona");
+const kontoPrzycisk = document.getElementById("kontoIkona");
 const modeSwitchButton = document.getElementById("mode-switch");
 const nawigacja = document.getElementById("nawigacja");
 const main = document.getElementById("main");

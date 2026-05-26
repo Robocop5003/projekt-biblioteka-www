@@ -11,14 +11,15 @@
 #ksiazkaDetaleTytul {
     font-size: 50px;
 
-    min-width: 400px;
-    max-width: calc(85% - 200px);
+    max-width: 360px;
 
     margin-top: 0px;
 }
 
 #ksiazkaDetaleAutor {
     font-size: 30px;
+
+    max-width: 360px;
 
     margin-top: -30px;
     margin-bottom: 30px;
@@ -27,13 +28,13 @@
 }
 
 #ksiazkaDetaleAutor:hover {
-    color: var(--color-blueYoutubelink);
+    color: var(--background-button);
 }
 
 /* Okładka */
 
 #ksiazkaDetaleOkladka {
-    box-shadow: 0 0 35px var(--box-shadow); /* Tu jest ten glow */
+    box-shadow: 0 0 30px var(--box-shadow); /* Tu jest ten glow */
 }
 
 /* Rzeczy pod okładką */
@@ -53,16 +54,30 @@
     gap: 8px;
 
     list-style: none;
+
+    max-width: 360px;
 }
 
 /* === Linki === */
 
 .ksiazkaDetaleLinki {
     text-decoration: none;
-    color: var(--light-dark-charcoalWhiteAlmost)
+    color: var(--light-dark-charcoalWhiteAlmost);
 }
 
 .ksiazkaDetaleLinki:hover {
     text-decoration: underline;
-    color: var(--color-blueYoutubelink);
+    color: var(--background-button);
+}
+
+/* === Przycisk === */
+
+#ksiazkaDetaleDodajDoKoszyka {
+    width: 360px;
+
+    font-size: 160%;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 0 30px var(--background-button); /* Tu jest ten glow */
 }

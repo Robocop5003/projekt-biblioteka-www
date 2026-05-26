@@ -41,6 +41,7 @@
     --background-background: var(--light-dark-whiteCharcoal); /* Tło do głównej części strony */
     --background-sticky: var(--light-dark-whiteAlmostBlack);
     --background-navigation: var(--light-dark-whiteCharcoal);
+    --background-button: var(--color-black); /* Tymczasowe, zmienione później w .js */
 
     --container: light-dark(var(--color-lightSilver),var(--color-darkGrey));
     --outline: var(--light-dark-blackWhite);
@@ -86,6 +87,16 @@ h1 {
 
 a {
     color: var(--color-blueYoutubelink);
+}
+
+button {
+    color: var(--color-white);
+    background-color: var(--background-button);
+
+    height: 50px;
+    
+    border: none;
+    border-radius: 50px;
 }
 
 /* === Strona główna === */
@@ -172,6 +183,9 @@ main.active {
 #menu-icon:hover {
     cursor:pointer;
 }
+
+#koszykIkona:hover {cursor:pointer;}
+#kontoIkona:hover {cursor:pointer;}
 
 #mode-switch:hover {
     cursor:pointer;
