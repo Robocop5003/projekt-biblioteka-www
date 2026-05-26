@@ -41,7 +41,7 @@
     --background-background: var(--light-dark-whiteCharcoal); /* Tło do głównej części strony */
     --background-sticky: var(--light-dark-whiteAlmostBlack);
     --background-navigation: var(--light-dark-whiteCharcoal);
-    --background-button: var(--color-black); /* Tymczasowe, zmienione później w .js */
+    --background-button: var(--color-black); /* Tymczasowe, zmienione później w .js, ALE NIE USUWAJ TEGO!!! */
 
     --container: light-dark(var(--color-lightSilver),var(--color-darkGrey));
     --outline: var(--light-dark-blackWhite);
@@ -143,7 +143,6 @@ main.active {
     text-align: center;
 }
 
-
 /* === Wyszukiwarka === */
 
 #wyszukiwarka {
@@ -180,6 +179,19 @@ main.active {
 
 /* === Ikony na sticky headerze === */
 
+#logo {
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    transform: translateX(-50%);  
+}
+
+#headIkonyPoPrawej {
+    min-width: 85px;
+    display: flex;
+    gap: 15px;
+}
+
 #menu-icon:hover {
     cursor:pointer;
 }
@@ -193,7 +205,7 @@ main.active {
 
 /* === Nawigacja === */
 
-#nawigacja { /*todo /* Zmienić, żeby cień nie znikał */
+#nawigacja { /*todo /* Zmienić, żeby cień nie znIał */
     position: fixed;
     transform: translateX(-104%); /* 104%, żeby cień był widoczny podczasz animacji ukrywania, ale nie był widoczny po */
     top: 70px;
