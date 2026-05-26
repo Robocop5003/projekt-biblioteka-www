@@ -16,7 +16,7 @@ class Naglowek extends HTMLElement {
 
                     <!-- Ikony po środku -->
                     <a href="./index.html" style="text-decoration: none; color: inherit;">
-                        <h1 id="logo">Lekturoteka</h1> <!--todo NAPRAWIĆ TO, ŻEBY BYŁO PO ŚRODKU!!! -->
+                        <h1 id="logo">Lekturoteka</h1>
                     </a>
 
                     <!-- Ikony po prawej -->

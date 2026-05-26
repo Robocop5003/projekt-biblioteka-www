@@ -85,3 +85,8 @@
 
     box-shadow: 0 0 10px var(--background-button); /* Tu jest ten glow */
 }
+
+/* ========== Inne rzeczy ========== > */
+
+#wyszukiwarka input {min-width: 360px;}
+#wyszukiwarka input::placeholder {color: var(--light-dark-charcoalWhiteAlmost);}

@@ -164,7 +164,9 @@ main.active {
             
     box-sizing: border-box;
     text-align: left;
+
     padding-left: 20px;
+    padding-right: 20px;
 
     background-color: var(--container);
 }

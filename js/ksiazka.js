@@ -28,6 +28,9 @@ async function wlaczKsiazkaDetale() {
         ksiazkaZapisana.epoch,ksiazkaZapisana.kind,ksiazkaZapisana.genre);
 
     ksiazkaKolorTla(ksiazkaZapisana);
+
+    //document.getElementById("wyszukiwarka-textbox").value=ksiazkaZapisana.title
+    document.getElementById("wyszukiwarka-textbox").placeholder=ksiazkaZapisana.title;
 }
 
 wlaczKsiazkaDetale();
