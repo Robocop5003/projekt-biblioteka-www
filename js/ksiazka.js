@@ -3,6 +3,11 @@ function ksiazkaKolorTla(ksiazkaZapisana) {
         '--box-shadow',
         `${ksiazkaZapisana.cover_color}`
     );
+
+    document.documentElement.style.setProperty(
+        '--background-button',
+        `${ksiazkaZapisana.cover_color}`
+    );
 }
 
 var ksiazkaZapisana;
@@ -23,6 +28,9 @@ async function wlaczKsiazkaDetale() {
         ksiazkaZapisana.epoch,ksiazkaZapisana.kind,ksiazkaZapisana.genre);
 
     ksiazkaKolorTla(ksiazkaZapisana);
+
+    //document.getElementById("wyszukiwarka-textbox").value=ksiazkaZapisana.title
+    document.getElementById("wyszukiwarka-textbox").placeholder=ksiazkaZapisana.title;
 }
 
 wlaczKsiazkaDetale();
@@ -64,5 +72,9 @@ function ksiazkaDetale(tytul,autor,okladka,epoka,rodzaj,gatunek) {
                 </a>
             </li>
         </ul></nav>
+
+        <button id="ksiazkaDetaleDodajDoKoszyka" type="button">
+            Dodaj książkę do koszyka
+        </button>
     `;
 }

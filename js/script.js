@@ -11,11 +11,20 @@ class Naglowek extends HTMLElement {
         this.innerHTML = `
             <div id="head" class="sticky">
                 <header>
+                    <!-- Ikony po lewej -->
                     <span id="menu-icon" alt="Menu" class="material-symbols-outlined unselectable">menu</span>
+
+                    <!-- Ikony po środku -->
                     <a href="./index.html" style="text-decoration: none; color: inherit;">
                         <h1 id="logo">Lekturoteka</h1>
                     </a>
-                    <span id="mode-switch" alt="Zmiana motywu" class="material-symbols-outlined unselectable"></span>
+
+                    <!-- Ikony po prawej -->
+                    <span id="headIkonyPoPrawej">
+                        <span id="koszykIkona" alt="Koszyk" class="material-symbols-outlined unselectable">shopping_basket</span>
+                        <span id="kontoIkona" alt="Konto" class="material-symbols-outlined unselectable">account_circle</span>
+                        <span id="mode-switch" alt="Zmiana motywu" class="material-symbols-outlined unselectable"></span>
+                    </span>
                 </header>
              </div>
         `;
@@ -56,18 +65,35 @@ customElements.define('komponent-wyszukiwarka', Wyszukiwarka);
 // ========== Przyciski na sticky ==========
 
 const menuButton = document.getElementById("menu-icon");
+const koszykPrzycisk = document.getElementById("koszykIkona");
+const kontoPrzycisk = document.getElementById("kontoIkona");
 const modeSwitchButton = document.getElementById("mode-switch");
 const nawigacja = document.getElementById("nawigacja");
 const main = document.getElementById("main");
+
+// === Funkcje na kliknięcie przycisków ===
 
 if(menuButton) {
     menuButton.addEventListener("click", menuClick);
 }
 
+if (koszykPrzycisk) {koszykPrzycisk.addEventListener("click", koszykKlikniecie);}
+if (kontoPrzycisk) {kontoPrzycisk.addEventListener("click", kontoKlikniecie);}
+
 if(modeSwitchButton) {
     modeSwitchButton.addEventListener("click", modeSwitchClick);
     initThemeIcon();
 }
+
+// === Funkcje po kliknięciu przycisku ===
+
+function menuClick() {
+    nawigacja.classList.toggle("active");
+    main.classList.toggle("active");
+}
+
+function koszykKlikniecie() {window.location.href = "./koszyk.html";}
+function kontoKlikniecie() {window.location.href = "./konto.html";}
 
 function initThemeIcon() {
     const theme = localStorage.getItem("theme");
@@ -75,11 +101,6 @@ function initThemeIcon() {
         modeSwitchButton.innerHTML = theme == "dark" ? "dark_mode" : "light_mode";
     else
         modeSwitchButton.innerHTML = "dark_mode";
-}
-
-function menuClick() {
-    nawigacja.classList.toggle("active");
-    main.classList.toggle("active");
 }
 
 function modeSwitchClick() {

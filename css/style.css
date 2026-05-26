@@ -41,6 +41,7 @@
     --background-background: var(--light-dark-whiteCharcoal); /* Tło do głównej części strony */
     --background-sticky: var(--light-dark-whiteAlmostBlack);
     --background-navigation: var(--light-dark-whiteCharcoal);
+    --background-button: var(--color-black); /* Tymczasowe, zmienione później w .js, ALE NIE USUWAJ TEGO!!! */
 
     --container: light-dark(var(--color-lightSilver),var(--color-darkGrey));
     --outline: var(--light-dark-blackWhite);
@@ -88,6 +89,16 @@ a {
     color: var(--color-blueYoutubelink);
 }
 
+button {
+    color: var(--color-white);
+    background-color: var(--background-button);
+
+    height: 50px;
+    
+    border: none;
+    border-radius: 50px;
+}
+
 /* === Strona główna === */
 
 main {
@@ -132,7 +143,6 @@ main.active {
     text-align: center;
 }
 
-
 /* === Wyszukiwarka === */
 
 #wyszukiwarka {
@@ -154,7 +164,9 @@ main.active {
             
     box-sizing: border-box;
     text-align: left;
+
     padding-left: 20px;
+    padding-right: 20px;
 
     background-color: var(--container);
 }
@@ -169,9 +181,25 @@ main.active {
 
 /* === Ikony na sticky headerze === */
 
+#logo {
+    position: absolute;
+    left: 50%;
+    top: -5px;
+    transform: translateX(-50%);  
+}
+
+#headIkonyPoPrawej {
+    min-width: 85px;
+    display: flex;
+    gap: 15px;
+}
+
 #menu-icon:hover {
     cursor:pointer;
 }
+
+#koszykIkona:hover {cursor:pointer;}
+#kontoIkona:hover {cursor:pointer;}
 
 #mode-switch:hover {
     cursor:pointer;
@@ -179,7 +207,7 @@ main.active {
 
 /* === Nawigacja === */
 
-#nawigacja { /*todo /* Zmienić, żeby cień nie znikał */
+#nawigacja {
     position: fixed;
     transform: translateX(-104%); /* 104%, żeby cień był widoczny podczasz animacji ukrywania, ale nie był widoczny po */
     top: 70px;
