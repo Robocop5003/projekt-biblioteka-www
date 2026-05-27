@@ -131,3 +131,20 @@ function ksiazkaHTMLString(img, title, author) {
         <p class="autor">${author}</p>
     `;
 }
+
+// ========== Ukrycie wyszukiwarki ==========
+
+const wyszukiwarka = document.getElementById("wyszukiwarka");
+let ostatniScrollY = window.scrollY;
+
+window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    if(scrollY > ostatniScrollY && (scrollY - ostatniScrollY) > 5) {
+        wyszukiwarka.classList.add("hidden");
+    } else if(scrollY < ostatniScrollY && (ostatniScrollY - scrollY) > 5) {
+        wyszukiwarka.classList.remove("hidden");
+    }
+
+    ostatniScrollY = scrollY;
+})
