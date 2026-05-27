@@ -134,6 +134,7 @@ main.active {
 /* === Polecane === */
 
 #polecane {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -149,6 +150,16 @@ main.active {
     display: flex;
     justify-content: center;
     align-items: center; 
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+}
+
+#wyszukiwarka.hidden {
+    transform: translateY(-100%);
 }
 
 #wyszukiwarka input {
@@ -249,7 +260,8 @@ main.active {
 #browserList {
     display: flex;
     flex-direction: column;
-    row-gap: 5px;  
+    row-gap: 5px;
+    margin-top: 80px;
 }
 
 /* ========== Klasy ========== */
@@ -284,7 +296,6 @@ main.active {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 100%;
-    
 }
 
 .ksiazka .autor {
@@ -298,6 +309,7 @@ main.active {
 .ksiazka:hover {
     background-color: var(--color-silver);
     transition: background-color 0.1s ease-in-out;
+    cursor: pointer;
 }
 
 .ksiazka:hover img {
